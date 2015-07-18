@@ -13,6 +13,15 @@
     "tests"
   ],
   "dependencies": {
-    "skeleton-less": "*"
+    "skeleton-less": "*",
+    "normalize.css": "~3.0.3"
+  },
+  "exportsOverride": {
+    "skeleton-less": {
+      "css": "less/*.less"
+    },
+    "normalize.css": {
+      "css": "*.css"
+    }
   }
 }

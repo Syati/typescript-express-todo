@@ -1,4 +1,18 @@
-typings
+# emacs
+.tern-port
+
+# node
 node_modules
+
+# type script definitions
+typings
+
+# bower
 bower_components
+.bower-cache
+.bower-registry
+
+# project ignore
 server/**/*.js
+server/assets/vendor
+docs/styledocco
