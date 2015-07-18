@@ -3,13 +3,15 @@ extends ../layout
 block content
   section.container
     h2= title
-    ul
+    ul.m-todos
       each todo, index in todos
-        li
-          a(href="/todos/#{index}") #{index}:#{todo.title}
-          a.button(href="/todos/#{index}/edit") Edit
-          form(method="post", action="/todos/#{index}")
-            input(type="submit", value="del")
-            input(type="hidden", name="_method", value="delete")
-            input(type="hidden", name="id", value="#{index}")
+        li.m-todos-item
+          .m-todos-item__title
+            a(href="/todos/#{index}") #{index}:#{todo.title}
+          .three.columns
+            a.button(href="/todos/#{index}/edit") Edit
+            form(method="post", action="/todos/#{index}")
+              input(type="submit", value="del")
+              input(type="hidden", name="_method", value="delete")
+              input(type="hidden", name="id", value="#{index}")
     a(href="/todos/new") Create Todo
