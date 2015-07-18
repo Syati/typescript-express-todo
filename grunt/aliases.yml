@@ -6,6 +6,7 @@ default:
 dev:
   - 'bower:default'
   - 'typescript:default'
+  - 'styleguide:default'
 
 prod:
   - 'bower:prod'
