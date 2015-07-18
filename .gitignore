@@ -14,5 +14,6 @@ bower_components
 
 # project ignore
 server/**/*.js
+server/public/stylesheets
 server/assets/vendor
 docs/styledocco
