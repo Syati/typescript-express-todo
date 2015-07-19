@@ -12,7 +12,9 @@ module.exports = function(grunt){
       settings: {
         projectRoot  : path.join(process.cwd(), 'server'),
         // assets
-        getAssetsVendorDir : function(){ return path.join(this.projectRoot, 'assets', 'vendor'); }
+        getAssetsDir : function(){ return path.join(this.projectRoot, 'assets'); },
+        getAssetsVendorDir : function(){ return path.join(this.projectRoot, 'assets', 'vendor'); },
+        getPublicDir : function(){ return path.join(this.projectRoot, 'public'); }
       }
     }
   });
