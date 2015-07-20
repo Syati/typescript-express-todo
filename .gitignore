@@ -1,3 +1,5 @@
+npm-debug.log
+
 # emacs
 .tern-port
 
@@ -13,6 +15,7 @@ bower_components
 .bower-registry
 
 # project ignore
+server/**/*.d.ts
 server/**/*.js
 server/public
 server/assets/vendor
