@@ -10,8 +10,7 @@ block content
             a(href="/todos/#{index}") #{index}:#{todo.title}
           .m-todos-item__menu.l-table-cell
               a.m-btn(href="/todos/#{index}/edit") edit
-              form(method="post", action="/todos/#{index}")
+              form(method="post", action="/todos/#{index}?_method=delete")
                 input.m-btn(type="submit", value="del")
-                input(type="hidden", name="_method", value="delete")
                 input(type="hidden", name="id", value="#{index}")
     a(href="/todos/new") Create Todo

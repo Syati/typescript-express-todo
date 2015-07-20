@@ -28,7 +28,8 @@ class Todos {
     }
 
     static destroy(request: express.Request, response: express.Response) {
-        response.render('todos/index', { title: 'Todos', todos: todoFixture });
+        todoFixture.splice(request.body.id, 1);
+        response.redirect('/todos');
     }
 
     static show(request: express.Request, response: express.Response) {
