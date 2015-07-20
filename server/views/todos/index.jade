@@ -1,17 +1,17 @@
 extends ../layout
 
 block content
-  section.container
+  section
     h2= title
     ul.m-todos
       each todo, index in todos
-        li.m-todos-item
-          .m-todos-item__title
+        li.m-todos-item.l-table
+          .m-todos-item__title.l-table-cell
             a(href="/todos/#{index}") #{index}:#{todo.title}
-          .three.columns
-            a.button(href="/todos/#{index}/edit") Edit
-            form(method="post", action="/todos/#{index}")
-              input(type="submit", value="del")
-              input(type="hidden", name="_method", value="delete")
-              input(type="hidden", name="id", value="#{index}")
+          .m-todos-item__menu.l-table-cell
+              a.m-btn(href="/todos/#{index}/edit") edit
+              form(method="post", action="/todos/#{index}")
+                input.m-btn(type="submit", value="del")
+                input(type="hidden", name="_method", value="delete")
+                input(type="hidden", name="id", value="#{index}")
     a(href="/todos/new") Create Todo

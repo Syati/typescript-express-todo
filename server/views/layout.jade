@@ -4,17 +4,15 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    header#header
+    header#header.l-table
       .l-table-cell.m-header-open-icon ⇔
       h1.l-table-cell.l-main-side.m-header-title Dashboard
 
     nav#sidebar
-      ul.md-nav-menu
-        li about
-        li article
+      ul.m-nav-menu
+        li: a(href='/todos'): img(src="/images/icon-todo.svg")
     main#main.l-main-side
       article
         block content
     footer#footer.l-main-side
-      .container
         p Copyright © 2015 Syati.info
