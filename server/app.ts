@@ -1,19 +1,21 @@
 /// <reference path="../typings/tsd.d.ts" />
 import express = require('express');
+import mongoose = require('mongoose');
+import settings = require('./config/settings/index');
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+// db
+mongoose.connect(settings.mongo.uri);
 
 // app
 var app = express();
-require('./config/base')(app);
+require('./config/express')(app);
 
 // server
 var debug = require('debug')('server');
-app.set('port', process.env.PORT || 3000);
-app.listen(app.get('port'), ()=>
+app.listen(settings.port, ()=>
     debug(
         'Express server listening on %d, in %s mode',
-        app.get('port'), app.get('env')
+        settings.port, settings.env
     )
 );
 
