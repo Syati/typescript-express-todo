@@ -1,5 +1,6 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
+// Third party
 import express = require('express');
 import path = require('path');
 import favicon = require('serve-favicon');
@@ -8,13 +9,14 @@ import cookieParser = require('cookie-parser');
 import bodyParser = require('body-parser');
 import methodOverride = require('method-override');
 import lessMiddleware = require('less-middleware');
+
+// Local
+import settings = require('./settings/index');
 import utilError = require('../utils/error/index');
 
 function config(app) {
-    var root = path.normalize(path.join(__dirname, '../'))
-
     // view engine setup
-    app.set('views', path.join(root, 'views'));
+    app.set('views', path.join(settings.root, 'views'));
     app.set('view engine', 'jade');
     // uncomment after placing your favicon in /public
     //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -24,19 +26,18 @@ function config(app) {
     app.use(methodOverride('_method'));
     app.use(cookieParser());
 
-    app.use(lessMiddleware(path.join(root, 'assets'), {
-        dest: path.join(root, 'public')
+    app.use(lessMiddleware(path.join(settings.root, 'assets'), {
+        dest: path.join(settings.root, 'public')
     }));
-    app.use(express.static(path.join(root, 'public')));
+    app.use(express.static(path.join(settings.root, 'public')));
 
     // route
-    require('../routes')(app);
+    require('./routes')(app);
 
     // catch 404 and forward to error handler
     app.use(utilError.error404);
 
-    var env = app.get('env');
-    switch(env){
+    switch(settings.env){
     case "production":
         app.use(utilError.prodErrorHandler);
     case "development":
