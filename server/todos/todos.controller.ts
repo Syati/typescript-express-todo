@@ -1,17 +1,13 @@
 /// <reference path="../../typings/tsd.d.ts" />
-import express = require('express')
+import express = require('express');
+import Todo = require('./todos.models');
 
-var todoFixture = [
-    {title: 'Make css', body: 'body0'},
-    {title: 'Fix todos model', body: 'body1'},
-    {title: 'Fix todos controller', body: 'body2'}
-];
-
-export = Todos;
-
-class Todos {
+class TodosController {
     static index(request: express.Request, response: express.Response) {
-        response.render('todos/index', { title: 'Todos', todos: todoFixture });
+        Todo.find({}, (err, todos) => {
+            if(err) { return response.sendStatus(404) };
+            response.render('todos/index', { title: 'Todos', todos: todos });
+        });
     }
 
     static new(request: express.Request, response: express.Response) {
@@ -20,36 +16,47 @@ class Todos {
 
     static create(request: express.Request, response: express.Response) {
         var post = {
-            title: request.body.title,
-            body: request.body.body
+            name: request.body.name,
+            description: request.body.description,
+            active: false
         };
-        todoFixture.push(post);
+        Todo.create(post);
         response.redirect('/todos');
     }
 
     static destroy(request: express.Request, response: express.Response) {
-        todoFixture.splice(request.body.id, 1);
-        response.redirect('/todos');
+        Todo.findById(request.params.id, (err, todo) => {
+            todo.remove((err) => {
+                if(err) { return response.sendStatus(404) };
+                response.redirect('/todos');
+            });
+        });
     }
 
     static show(request: express.Request, response: express.Response) {
-        response.render('todos/detail', { title: 'Todos Detail', todo: todoFixture[request.params.id] });
+        Todo.findById(request.params.id, (err, todo) => {
+            if(err) { return response.sendStatus(404) };
+            response.render('todos/detail', { title: 'Todos Detail', todo: todo });
+        });
     }
 
     static edit(request: express.Request, response: express.Response) {
-        response.render('todos/edit', {
-            title: 'Todos edit',
-            id:request.params.id,
-            todo: todoFixture[request.params.id]
+        Todo.findById(request.params.id, (err, todo) => {
+            if(err) { return response.sendStatus(404) };
+            response.render('todos/edit', { title: 'Todos Edit', todo: todo });
         });
     }
 
     static update(request: express.Request, response: express.Response) {
-        todoFixture[request.body.id] = {
-            title: request.body.title,
-            body: request.body.body
-        }
-
-        response.redirect('/todos');
+        Todo.findById(request.params.id, (err, todo) => {
+            todo.name = request.body.name;
+            todo.description = request.body.description;
+            todo.save((err, res) => {
+                if(err) { return response.sendStatus(404) };
+                response.redirect('/todos');
+            });
+        });
     }
 }
+
+export = TodosController;
