@@ -1,9 +1,26 @@
-
 # Getting started
 
-npm install
-npm start
+```
+$ npm install
+$ npm start
+```
 
-# Remove compiled source
+# Development
 
-npm run-script clean
+## Server start
+
+```
+$ npm start
+```
+
+## Watch source
+
+```
+$ grunt
+```
+
+## Remove compiled source
+
+```
+$ npm run clean
+```
