@@ -4,7 +4,7 @@ block content
   section.container
     h2= title
     form(method="post", action="/todos/create")
-      input(type="text", name="title")
-      input(type="text", name="body")
+      input(type="text", name="name")
+      input(type="text", name="description")
       input.m-btn(type="submit", value="add")
     a(href="/todos/") Todos
