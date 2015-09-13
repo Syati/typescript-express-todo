@@ -1,0 +1,42 @@
+{
+  "name": "ts-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "grunt",
+    "clean": "find -E . -regex '.*/server/.+\\.js$' -type f | xargs rm",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "~1.8.1",
+    "cookie-parser": "~1.3.3",
+    "debug": "~2.0.0",
+    "express": "^4.13.1",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",    
+    "grunt-bower-task": "~0.4.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-newer": "^1.1.1",
+    "grunt-rsync": "~0.6.2",
+    "grunt-styleguide": "~0.2.17",
+    "grunt-typescript": "^0.6.2",
+    "grunt-tsd": "^0.1.0",
+    "grunt-nodemon": "^0.4.0",
+    "grunt-concurrent": "^2.0.3",
+    "jade": "~1.6.0",
+    "less-middleware": "^2.0.1",
+    "load-grunt-config": "^0.17.1",
+    "lodash": "~3.10.0",
+    "method-override": "~2.3.4",
+    "mongoose": "~4.0.8",
+    "morgan": "~1.3.0",
+    "nodemon": "^1.3.7",
+    "serve-favicon": "~2.1.3",
+    "styledocco": "~0.6.6",
+    "tsd": "~0.6.3"
+  },
+  "devDependencies": {}
+}
