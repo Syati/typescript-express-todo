@@ -1,0 +1,11 @@
+db:
+  image: mongo:latest
+web:
+  build: .
+  volumes:
+    - ./app:/express/app
+  ports:
+    - "3000:3000"
+    - "35729:35729"    
+  links:
+    - db
