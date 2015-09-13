@@ -10,7 +10,7 @@ dev:
   - 'bower:default'
   - 'rsync:default'
   - 'typescript:default'
-  - 'styleguide:default'
+  - 'styledocco:default'
 
 prod:
   - 'tsd:default'
