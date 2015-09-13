@@ -5,7 +5,7 @@ module.exports = {
     livereload: true
   },
   typescript: {
-    files: [path.join('<%= settings.PROJECT_ROOT %>', '**/*.ts')],
+    files: [path.join('<%= settings.SERVER_ROOT %>', '**/*.ts')],
     tasks: ['newer:typescript:default']
   },
   rsync: {
