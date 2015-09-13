@@ -1,7 +1,7 @@
 module.exports = {
   default: {
     options:{
-      targetDir: '<%= settings.getAssetsVendorDir() %>',
+      targetDir: '<%= settings.VENDOR_ROOT %>',
       install: true,
       verbose: true,
       cleanTargetDir: true,
@@ -19,7 +19,7 @@ module.exports = {
   },
   prod: {
     options:{
-      targetDir: '<%= settings.getAssetsVendorDir() %>',
+      targetDir: '<%= settings.VENDOR_ROOT %>',
       install: true,
       verbose: true,          
       cleanTargetDir: true,

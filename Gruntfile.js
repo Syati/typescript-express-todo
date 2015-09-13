@@ -7,14 +7,18 @@
 var path = require('path');
 
 module.exports = function(grunt){
+  var projectRoot = path.join(process.cwd(), 'server');
+
   require('load-grunt-config')(grunt, {
     data: {
       settings: {
-        projectRoot  : path.join(process.cwd(), 'server'),
+        PROJECT_ROOT  : projectRoot,
+        APP : path.join(projectRoot, 'app.js'),
+        VIEWS_ROOT : path.join(projectRoot, 'views'),
         // assets
-        getAssetsDir : function(){ return path.join(this.projectRoot, 'assets'); },
-        getAssetsVendorDir : function(){ return path.join(this.projectRoot, 'assets', 'vendor'); },
-        getPublicDir : function(){ return path.join(this.projectRoot, 'public'); }
+        ASSETS_ROOT : path.join(projectRoot, 'assets'),
+        VENDOR_ROOT : path.join(projectRoot, 'assets', 'vendor'),
+        PUBLIC_ROOT : path.join(projectRoot, 'public')
       }
     }
   });

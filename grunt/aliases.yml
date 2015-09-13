@@ -1,16 +1,19 @@
 default:
+  - 'tsd:default'
   - 'bower:default'
   - 'rsync:default'
   - 'typescript:default'
-  - 'watch'
+  - 'concurrent:default'
 
 dev:
+  - 'tsd:default'
   - 'bower:default'
   - 'rsync:default'
   - 'typescript:default'
   - 'styleguide:default'
 
 prod:
+  - 'tsd:default'
   - 'bower:prod'
   - 'rsync:default'
   - 'typescript:default'
