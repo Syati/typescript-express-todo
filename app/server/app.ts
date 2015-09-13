@@ -1,4 +1,4 @@
-/// <reference path="../typings/tsd.d.ts" />
+/// <reference path="../../typings/tsd.d.ts" />
 import express = require('express');
 import mongoose = require('mongoose');
 import settings = require('./config/settings/index');
