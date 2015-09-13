@@ -15,8 +15,8 @@ bower_components
 .bower-registry
 
 # project ignore
-server/**/*.d.ts
-server/**/*.js
-server/public
-server/assets/vendor
+app/server/**/*.d.ts
+app/server/**/*.js
+app/server/public
+app/server/assets/vendor
 docs/styledocco
