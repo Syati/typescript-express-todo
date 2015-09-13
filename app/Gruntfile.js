@@ -7,9 +7,11 @@
 var path = require('path');
 
 module.exports = function(grunt){
-  var projectRoot = path.join(process.cwd(), 'server');
+  var appRoot = path.dirname(__filename);
+  var projectRoot = path.join(appRoot, 'server');
 
   require('load-grunt-config')(grunt, {
+    configPath: path.join(appRoot, 'grunt'),
     data: {
       settings: {
         PROJECT_ROOT  : projectRoot,

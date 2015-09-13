@@ -1,10 +1,22 @@
+var path = require('path');
+
 module.exports = {
+  options: {
+    livereload: true
+  },
   typescript: {
-    files: ['server/**/*.ts'],
+    files: [path.join('<%= settings.PROJECT_ROOT %>', '**/*.ts')],
     tasks: ['newer:typescript:default']
   },
   rsync: {
-    files: ['server/assets/images/**/*'],
+    files: [path.join('<%= settings.ASSETS_ROOT %>', 'images/**/*')],
     tasks: ['rsync:default']
+  },
+  // for livereload
+  less: {
+    files: [path.join('<%= settings.ASSETS_ROOT %>', 'stylesheets/**/*.less')]
+  },
+  jade: {
+    files: [path.join('<%= settings.VIEWS_ROOT %>', '**/*.jade')]
   }
 };
