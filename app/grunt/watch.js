@@ -18,5 +18,8 @@ module.exports = {
   },
   jade: {
     files: [path.join('<%= settings.VIEWS_ROOT %>', '**/*.jade')]
+  },
+  server: {
+    files: ['.rebooted']
   }
 };

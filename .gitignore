@@ -15,6 +15,7 @@ bower_components
 .bower-registry
 
 # project ignore
+.rebooted
 app/server/**/*.d.ts
 app/server/**/*.js
 app/server/public
