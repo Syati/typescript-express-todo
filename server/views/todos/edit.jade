@@ -1,0 +1,10 @@
+extends ../layout_after_login
+
+block content
+    h2= title
+    form(method="post", action="/todos/#{todo._id}?_method=put")
+      input(type="text", name="name", value=todo.name)
+      input(type="text", name="description", value=todo.description)
+      input(type="hidden", name="id", value=todo._id)
+      input.m-btn(type="submit", value="update")
+    a(href="/todos/") Todos

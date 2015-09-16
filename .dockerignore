@@ -1,0 +1,6 @@
+.bower-cache
+.bower-registry
+.git
+node_modules
+typings
+bower_components

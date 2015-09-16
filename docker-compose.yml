@@ -3,7 +3,12 @@ db:
 web:
   build: .
   volumes:
-    - ./app:/express/app
+    - ./server:/app/server
+    - ./grunt:/app/grunt
+    - ./Gruntfile.js:/app/Gruntfile.js
+    - ./bower.json:/app/bower.json
+    - ./package.json:/app/package.json
+    - ./tsd.json:/app/tsd.json
   ports:
     - "3000:3000"
     - "35729:35729"    
