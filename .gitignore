@@ -16,8 +16,8 @@ bower_components
 
 # project ignore
 .rebooted
-app/server/**/*.d.ts
-app/server/**/*.js
-app/server/public
-app/server/assets/vendor
+server/**/*.d.ts
+server/**/*.js
+server/public
+server/assets/vendor
 docs/styledocco
