@@ -1,18 +1,19 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
+import path           = require('path');
 // Third party
-import express = require('express');
-import path = require('path');
-//import favicon = require('serve-favicon');
-import logger = require('morgan');
-import cookieParser = require('cookie-parser');
-import bodyParser = require('body-parser');
+import express        = require('express');
+//import favicon      = require('serve-favicon');
+import logger         = require('morgan');
+import cookieParser   = require('cookie-parser');
+import bodyParser     = require('body-parser');
 import methodOverride = require('method-override');
 import lessMiddleware = require('less-middleware');
+import passport       = require('passport');
 
 // Local
-import settings = require('./settings/index');
-import utilError = require('../utils/error/index');
+import settings       = require('./settings/index');
+import utilError      = require('../utils/error/index');
 
 function config(app) {
     // view engine setup
@@ -24,6 +25,7 @@ function config(app) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(methodOverride('_method'));
+    app.use(passport.initialize());    
     app.use(cookieParser());
 
     app.use(lessMiddleware(path.join(settings.root, 'assets'), {
@@ -31,8 +33,8 @@ function config(app) {
     }));
     app.use(express.static(path.join(settings.root, 'public')));
 
-    // route
-    require('./routes')(app);
+    require('./passport')(passport);
+    require('./routes')(app, passport);
 
     // catch 404 and forward to error handler
     app.use(utilError.error404);

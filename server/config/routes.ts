@@ -1,7 +1,7 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
-function routes(app) {
-    app.use('/', require('../core'));
+function routes(app, passport) {
+    app.use('/', require('../core')(passport));
     app.use('/todos', require('../todos'));
     app.use('/users', require('../users'));
 }

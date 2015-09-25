@@ -6,16 +6,16 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "mime/mime.d.ts": {
-      "commit": "2fe8a6fda29c3340a5e5672b1809a84c88729a30"
+      "commit": "32029fcb4e1a3ef8968711b545d77b584435729d"
     },
     "node/node.d.ts": {
       "commit": "7bab855ae33d79e86da1eb6c73a7f7eab2676ddb"
     },
     "express/express.d.ts": {
-      "commit": "2fe8a6fda29c3340a5e5672b1809a84c88729a30"
+      "commit": "32029fcb4e1a3ef8968711b545d77b584435729d"
     },
     "serve-static/serve-static.d.ts": {
-      "commit": "2fe8a6fda29c3340a5e5672b1809a84c88729a30"
+      "commit": "32029fcb4e1a3ef8968711b545d77b584435729d"
     },
     "serve-favicon/serve-favicon.d.ts": {
       "commit": "db475daba23206e8cd0ac04d47f0764f4a62f7da"
@@ -40,6 +40,18 @@
     },
     "mongoose/mongoose.d.ts": {
       "commit": "f6c8ca47193fb67947944a3170912672ac3e908e"
+    },
+    "passport/passport.d.ts": {
+      "commit": "32029fcb4e1a3ef8968711b545d77b584435729d"
+    },
+    "passport-local/passport-local.d.ts": {
+      "commit": "32029fcb4e1a3ef8968711b545d77b584435729d"
+    },
+    "bcrypt/bcrypt.d.ts": {
+      "commit": "32029fcb4e1a3ef8968711b545d77b584435729d"
+    },
+    "es6-promise/es6-promise.d.ts": {
+      "commit": "32029fcb4e1a3ef8968711b545d77b584435729d"
     }
   }
 }

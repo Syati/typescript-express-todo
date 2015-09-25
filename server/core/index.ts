@@ -1,13 +1,26 @@
 /// <reference path="../../typings/tsd.d.ts" />
 
 import express = require('express');
-import {Home, Account} from "./controller";
+import {Homes} from "./controller";
 
-var router = express.Router();
-
-router.get('/', Home.index);
-router.get('/login', Account.login);
-router.get('/signup', Account.signup);
+function router(passport) {
+    var router = express.Router();
+    
+    router.get('/', Homes.index);
+    router.get('/login', Homes.login);
+    router.get('/signup', Homes.signup);
+    
+    router.post('/login', passport.authenticate('local-login', {
+        successRedirect: '/todos',
+        failureRedirect: '/login'
+    }));
+    router.post('/signup', passport.authenticate('local-signup', {
+        successRedirect: '/todos',
+        failureRedirect: '/signup'
+    }));
+    
+    return router
+}
 
 
 export = router;
