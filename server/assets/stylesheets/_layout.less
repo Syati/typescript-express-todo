@@ -2,17 +2,41 @@
 
 @sidebar-width: 50px;
 @distance-sidebar-main: 30px;
+@container-width: 960px;
+
 
 #header {
   position: fixed;
   top:0px;
   width:100%;
   min-height:50px;
-  border-bottom: 1px solid @border-color;
+  border-bottom: 1px solid;
+}
+
+#sidebar {
+  position:fixed;
+  top:50px;
+  width: @sidebar-width;
+  height:100%;
+  box-shadow: 0px 3px 10px -5px;
+  padding: 10px 0px;
+}
+
+#main {
+  padding:50px 0 50px 0;
+  height:100%;
+}
+
+#footer {
+  text-align: center;
+  border-top: 1px solid;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
 }
 
 .l-table {
-  width:100%;  
+  width:100%;
   display:table;
 }
 
@@ -27,26 +51,18 @@
 }
 
 .l-main-side {
-  margin-left: @sidebar-width;
-  padding-left: @distance-sidebar-main;  
+  margin-left: @sidebar-width !important;
+  padding-left: @distance-sidebar-main !important;
 }
 
-#sidebar {
-  position:fixed;
-  width: @sidebar-width;
-  height:100%;
-  background: linear-gradient(@sidebar-color-1, @sidebar-color-2);
-  box-shadow: 0px 3px 10px -5px;
-  padding: 10px 0px;
-}
-
-#main {
-}
-
-#footer {
-  text-align: center;
-  border-top: 1px solid @border-color;
-  position: fixed;
-  bottom: 0px;
+.l-container {
+  position: relative;
   width: 100%;
+  max-width: @container-width;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  &--full {
+    height: 100%;
+  }
 }
