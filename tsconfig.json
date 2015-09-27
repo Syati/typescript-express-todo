@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "sourceMap": false,
+        "declaration": false,
+        "outDir": "",
+        "target": "ES5",
+        "module": "commonjs",
+        "noEmitOnError": true
+    },
+    "files": [
+        "typings/tsd.d.ts",
+        "server/app.ts",
+        "server/config/express.ts",
+        "server/config/passport.ts",
+        "server/config/routes.ts",
+        "server/config/settings/development.ts",
+        "server/config/settings/index.ts",
+        "server/config/settings/localhost.ts",
+        "server/config/settings/production.ts",
+        "server/core/controller.ts",
+        "server/core/index.ts",
+        "server/todos/index.ts",
+        "server/todos/todos.controller.ts",
+        "server/todos/todos.interface.ts",
+        "server/todos/todos.models.ts",
+        "server/users/index.ts",
+        "server/users/interfaces.ts",
+        "server/users/models.ts",
+        "server/users/users.controller.ts",
+        "server/utils/error/index.ts"
+    ]
+}
