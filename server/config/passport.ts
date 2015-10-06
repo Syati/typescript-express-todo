@@ -1,7 +1,5 @@
-/// <reference path="../../typings/tsd.d.ts" />
 import * as passportLocal from "passport-local";
 import * as User from '../users/models';
-
 
 function config(passport) {
     passport.serializeUser((user, done) => {

@@ -1,5 +1,3 @@
-/// <reference path="../../typings/tsd.d.ts" />
-
 import mongoose = require('mongoose');
 
 export interface ITodo extends mongoose.Document {

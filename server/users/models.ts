@@ -1,5 +1,3 @@
-/// <reference path="../../typings/tsd.d.ts" />
-
 import mongoose = require('mongoose');
 import bcrypt = require('bcrypt');
 import Schema = mongoose.Schema;

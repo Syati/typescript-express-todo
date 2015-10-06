@@ -1,5 +1,3 @@
-/// <reference path="../../typings/tsd.d.ts" />
-
 import mongoose = require('mongoose');
 import Schema = mongoose.Schema;
 import itodo = require('./todos.interface');

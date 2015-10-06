@@ -1,5 +1,3 @@
-/// <reference path="../../../typings/tsd.d.ts" />
-
 import express = require('express');
 
 export var error404: express.RequestHandler = function(req, res, next) {
