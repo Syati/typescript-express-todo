@@ -25,6 +25,7 @@
         "server/todos/todos.models.ts",
         "server/users/index.ts",
         "server/users/interfaces.ts",
+        "server/users/middleware.ts",
         "server/users/models.ts",
         "server/users/users.controller.ts",
         "server/utils/error/index.ts"

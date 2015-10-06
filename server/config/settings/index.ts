@@ -6,7 +6,7 @@ var baseSettings = {
     root: path.normalize(path.join(__dirname, '../../')),
     port: process.env.PORT || 3000,
     secrets: {
-        session: ''
+        session: 'secret'
     }
 }
 var envSettings = require('./' + baseSettings.env) || {};

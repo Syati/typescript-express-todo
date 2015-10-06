@@ -1,6 +1,7 @@
 import path           = require('path');
 // Third party
 import express        = require('express');
+import session        = require('express-session');
 //import favicon      = require('serve-favicon');
 import logger         = require('morgan');
 import cookieParser   = require('cookie-parser');
@@ -8,12 +9,16 @@ import bodyParser     = require('body-parser');
 import methodOverride = require('method-override');
 import lessMiddleware = require('less-middleware');
 import passport       = require('passport');
+import connectMongo   = require('connect-mongo');
+import mongoose       = require('mongoose');
 
 // Local
 import settings       = require('./settings/index');
 import utilError      = require('../utils/error/index');
 
 function config(app) {
+    let MongoStore = connectMongo(session);
+
     // view engine setup
     app.set('views', path.join(settings.root, 'views'));
     app.set('view engine', 'jade');
@@ -23,8 +28,18 @@ function config(app) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(methodOverride('_method'));
-    app.use(passport.initialize());    
     app.use(cookieParser());
+
+    app.use(session({
+        secret: settings.secrets.session,
+        resave: true,
+        saveUninitialized: true,
+        unset: 'destroy',
+        store: new MongoStore({mongooseConnection: mongoose.connection})
+    }))
+
+    app.use(passport.initialize());
+    app.use(passport.session());
 
     app.use(lessMiddleware(path.join(settings.root, 'assets'), {
         dest: path.join(settings.root, 'public')
@@ -33,6 +48,7 @@ function config(app) {
 
     require('./passport')(passport);
     require('./routes')(app, passport);
+
 
     // catch 404 and forward to error handler
     app.use(utilError.error404);
