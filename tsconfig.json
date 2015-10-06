@@ -19,15 +19,15 @@
         "server/config/settings/production.ts",
         "server/core/controller.ts",
         "server/core/index.ts",
+        "server/todos/controller.ts",
         "server/todos/index.ts",
-        "server/todos/todos.controller.ts",
-        "server/todos/todos.interface.ts",
-        "server/todos/todos.models.ts",
+        "server/todos/interface.ts",
+        "server/todos/models.ts",
+        "server/users/controller.ts",
         "server/users/index.ts",
         "server/users/interfaces.ts",
         "server/users/middleware.ts",
         "server/users/models.ts",
-        "server/users/users.controller.ts",
         "server/utils/error/index.ts"
     ]
 }

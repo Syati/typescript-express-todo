@@ -1,6 +1,6 @@
 import mongoose = require('mongoose');
 import Schema = mongoose.Schema;
-import itodo = require('./todos.interface');
+import itodo = require('./interface');
 
 var TodoSchema: Schema = new Schema({
     name: String,

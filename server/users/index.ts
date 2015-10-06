@@ -1,5 +1,5 @@
 import express = require('express');
-import controller = require('./users.controller');
+import controller = require('./controller');
 
 var router = express.Router();
 

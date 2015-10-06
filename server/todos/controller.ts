@@ -1,5 +1,5 @@
 import express = require('express');
-import Todo = require('./todos.models');
+import Todo = require('./models');
 
 class TodosController {
     static index(request: express.Request, response: express.Response) {
