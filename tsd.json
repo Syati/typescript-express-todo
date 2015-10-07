@@ -6,16 +6,16 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "mime/mime.d.ts": {
-      "commit": "6436105ed9e3f9de49ca7e2e010ffe298e884e40"
+      "commit": "e9be3cecf8a326d3e220c52b42d218169a7bb9f2"
     },
     "node/node.d.ts": {
       "commit": "7bab855ae33d79e86da1eb6c73a7f7eab2676ddb"
     },
     "express/express.d.ts": {
-      "commit": "32029fcb4e1a3ef8968711b545d77b584435729d"
+      "commit": "e9be3cecf8a326d3e220c52b42d218169a7bb9f2"
     },
     "serve-static/serve-static.d.ts": {
-      "commit": "6436105ed9e3f9de49ca7e2e010ffe298e884e40"
+      "commit": "e9be3cecf8a326d3e220c52b42d218169a7bb9f2"
     },
     "serve-favicon/serve-favicon.d.ts": {
       "commit": "db475daba23206e8cd0ac04d47f0764f4a62f7da"
@@ -61,6 +61,9 @@
     },
     "mongodb/mongodb.d.ts": {
       "commit": "6436105ed9e3f9de49ca7e2e010ffe298e884e40"
+    },
+    "csurf/csurf.d.ts": {
+      "commit": "e9be3cecf8a326d3e220c52b42d218169a7bb9f2"
     }
   }
 }

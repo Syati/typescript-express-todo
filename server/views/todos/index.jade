@@ -12,5 +12,6 @@ block content
               a.m-btn(href="/todos/#{todo._id}/edit") edit
               form(method="post", action="/todos/#{todo._id}?_method=delete")
                 input.m-btn(type="submit", value="del")
+                input(type="hidden", name="_csrf", value="#{csrfToken}")
                 input(type="hidden", name="id", value="#{todo._id}")
     a(href="/todos/new") Create Todo

@@ -11,6 +11,7 @@ import lessMiddleware = require('less-middleware');
 import passport       = require('passport');
 import connectMongo   = require('connect-mongo');
 import mongoose       = require('mongoose');
+import csurf          = require('csurf');
 
 // Local
 import settings       = require('./settings/index');
@@ -18,7 +19,6 @@ import utilError      = require('../utils/error/index');
 
 function config(app) {
     let MongoStore = connectMongo(session);
-
     // view engine setup
     app.set('views', path.join(settings.root, 'views'));
     app.set('view engine', 'jade');
@@ -40,6 +40,7 @@ function config(app) {
 
     app.use(passport.initialize());
     app.use(passport.session());
+    app.use(csurf());
 
     app.use(lessMiddleware(path.join(settings.root, 'assets'), {
         dest: path.join(settings.root, 'public')

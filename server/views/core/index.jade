@@ -8,5 +8,5 @@ block content
       div.m-login-inner.l-table-cell
         input.m-input(placeholder="Username", type="text", name="username")
         input.m-input(placeholder="Password", type="password", name="password")
+        input(type="hidden", name="_csrf", value="#{csrfToken}")
         input.m-btn.m-btn--max(type="submit", value="Log in")
-    
